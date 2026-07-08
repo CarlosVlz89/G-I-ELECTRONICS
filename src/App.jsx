@@ -522,13 +522,13 @@ function Layout() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#060814] text-[#f8fafc] flex flex-col antialiased selection:bg-[#00f0ff] selection:text-white font-sans">
+    <div className="min-h-screen bg-[#060814] text-[#f8fafc] flex flex-col antialiased selection:bg-brand-red selection:text-white font-sans">
       
       
       {/* Liquid Glow background effects */}
       <div className="absolute top-[-10%] left-[-20%] w-[60vw] h-[60vw] rounded-full bg-[#0ea5e9]/8 blur-[120px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '8s' }}></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#3b82f6]/6 blur-[150px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '12s' }}></div>
-      <div className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] rounded-full bg-[#00f0ff]/5 blur-[130px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '10s' }}></div>
+      <div className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] rounded-full bg-brand-red/5 blur-[130px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '10s' }}></div>
 
       {/* Header / Navbar */}
       <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-[#0f172a] shadow-sm transition-all duration-300">
@@ -553,7 +553,7 @@ function Layout() {
               <span className="text-xl font-black tracking-wider text-[#f8fafc] font-display leading-tight">
                 G & I ELECTRONICS
               </span>
-              <span className="text-[9px] font-black tracking-widest text-[#00f0ff] -mt-1 block">
+              <span className="text-[9px] font-black tracking-widest text-brand-red -mt-1 block">
                 LEDS Y BOCINAS
               </span>
             </div>
@@ -567,7 +567,7 @@ function Layout() {
                 to={item.href}
                 className={({ isActive }) => 
                   `text-sm font-semibold transition-all duration-200 ${
-                    isActive ? 'text-[#00f0ff] border-b-2 border-brand-red pb-1' : 'text-[#94a3b8] hover:text-[#00f0ff]'
+                    isActive ? 'text-brand-red border-b-2 border-brand-red pb-1' : 'text-[#94a3b8] hover:text-brand-red'
                   }`
                 }
               >
@@ -580,7 +580,7 @@ function Layout() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               to="/contacto"
-              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase text-white bg-[#00f0ff] rounded hover:bg-[#00d2e0] transition-all duration-300 shadow-sm"
+              className="inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase text-white bg-brand-red rounded hover:bg-brand-red-hover transition-all duration-300 shadow-sm"
             >
               Solicitar Cotización
             </Link>
@@ -607,7 +607,7 @@ function Layout() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) => 
                     `text-base font-semibold px-2 py-1.5 rounded-md transition-all ${
-                      isActive ? 'bg-brand-red/10 text-[#00f0ff]' : 'text-[#cbd5e1] hover:text-[#00f0ff] hover:bg-[#060814]'
+                      isActive ? 'bg-brand-red/10 text-brand-red' : 'text-[#cbd5e1] hover:text-brand-red hover:bg-[#060814]'
                     }`
                   }
                 >
@@ -617,7 +617,7 @@ function Layout() {
               <Link
                 to="/contacto"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 bg-[#00f0ff] text-white font-bold rounded hover:bg-brand-red-hover transition-all"
+                className="w-full text-center py-3 bg-brand-red text-white font-bold rounded hover:bg-brand-red-hover transition-all"
               >
                 Solicitar Cotización
               </Link>
@@ -657,7 +657,7 @@ function Layout() {
                 Grupo comercial importador de sistemas de audio, iluminación inteligente, pantallas LED y soportes de televisión. Abasto garantizado para constructoras y comercios en todo el país.
               </p>
               <div className="flex items-center gap-3 pt-2 text-[10px] text-[#94a3b8] font-bold uppercase">
-                <ShieldCheck className="w-4 h-4 text-[#00f0ff]" /> Importación Formal y Directa
+                <ShieldCheck className="w-4 h-4 text-brand-red" /> Importación Formal y Directa
               </div>
             </div>
 
@@ -665,10 +665,10 @@ function Layout() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Marcas</h4>
               <ul className="space-y-1.5 text-xs">
-                <li><Link to="/productos" className="hover:text-[#00f0ff] transition-all">G&I PRO</Link></li>
-                <li><Link to="/productos" className="hover:text-[#00f0ff] transition-all">TIANLAI</Link></li>
-                <li><Link to="/productos" className="hover:text-[#00f0ff] transition-all">MEGALUZ CONCERT</Link></li>
-                <li><Link to="/productos" className="hover:text-[#00f0ff] transition-all">GONEO</Link></li>
+                <li><Link to="/productos" className="hover:text-brand-red transition-all">G&I PRO</Link></li>
+                <li><Link to="/productos" className="hover:text-brand-red transition-all">TIANLAI</Link></li>
+                <li><Link to="/productos" className="hover:text-brand-red transition-all">MEGALUZ CONCERT</Link></li>
+                <li><Link to="/productos" className="hover:text-brand-red transition-all">GONEO</Link></li>
               </ul>
             </div>
 
@@ -676,8 +676,8 @@ function Layout() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Servicio</h4>
               <ul className="space-y-1.5 text-[11px]">
-                <li><Link to="/contacto" className="hover:text-[#00f0ff] transition-all">Servicio Postventa</Link></li>
-                <li><Link to="/contacto" className="hover:text-[#00f0ff] transition-all">Cotizaciones</Link></li>
+                <li><Link to="/contacto" className="hover:text-brand-red transition-all">Servicio Postventa</Link></li>
+                <li><Link to="/contacto" className="hover:text-brand-red transition-all">Cotizaciones</Link></li>
               </ul>
             </div>
 
@@ -685,10 +685,10 @@ function Layout() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Nosotros</h4>
               <ul className="space-y-1.5 text-[11px]">
-                <li><Link to="/nosotros" className="hover:text-[#00f0ff] transition-all">Perfil de la Empresa</Link></li>
-                <li><Link to="/nosotros" className="hover:text-[#00f0ff] transition-all">Introducción de Marca</Link></li>
-                <li><Link to="/aviso-privacidad" className="hover:text-[#00f0ff] transition-all text-left">Aviso de Privacidad</Link></li>
-                <li><Link to="/terminos-condiciones" className="hover:text-[#00f0ff] transition-all text-left">Términos y Condiciones</Link></li>
+                <li><Link to="/nosotros" className="hover:text-brand-red transition-all">Perfil de la Empresa</Link></li>
+                <li><Link to="/nosotros" className="hover:text-brand-red transition-all">Introducción de Marca</Link></li>
+                <li><Link to="/aviso-privacidad" className="hover:text-brand-red transition-all text-left">Aviso de Privacidad</Link></li>
+                <li><Link to="/terminos-condiciones" className="hover:text-brand-red transition-all text-left">Términos y Condiciones</Link></li>
               </ul>
             </div>
 
@@ -766,7 +766,7 @@ function HomeView() {
             <div className="flex flex-col sm:flex-row items-center lg:justify-start gap-4 pt-2">
               <Link
                 to="/productos"
-                className="w-full sm:w-auto px-8 py-4 bg-[#00f0ff] hover:bg-[#00d2e0] text-white font-bold rounded shadow-md transition-all duration-300 text-center flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-8 py-4 bg-brand-red hover:bg-brand-red-hover text-white font-bold rounded shadow-md transition-all duration-300 text-center flex items-center justify-center gap-2 group"
               >
                 Explorar Catálogo <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -807,42 +807,42 @@ function HomeView() {
         <div className="grid md:grid-cols-3 gap-6">
           {/* Bocinas */}
           <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
-            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-brand-red">
               <Volume2 className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Audio y Bocinas</h3>
             <p className="text-xs text-[#94a3b8] leading-relaxed">
               Equipamiento acústico que abarca bafles pasivos para instalaciones, altavoces activos recargables para exteriores e interiores, y sistemas profesionales Line Array de alta potencia.
             </p>
-            <Link to="/productos?categoria=bocina" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00f0ff] hover:underline">
+            <Link to="/productos?categoria=bocina" className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red hover:underline">
               Ver bocinas y bafles <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Luces LED */}
           <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
-            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-brand-red">
               <Zap className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Luces LED e Iluminación</h3>
             <p className="text-xs text-[#94a3b8] leading-relaxed">
               Soluciones avanzadas en tiras LED direccionables de alta densidad RGBIC, bombillas inteligentes y reflectores exteriores de alta potencia resistentes a la intemperie (IP65/IP66).
             </p>
-            <Link to="/productos?categoria=luces-led" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00f0ff] hover:underline">
+            <Link to="/productos?categoria=luces-led" className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red hover:underline">
               Ver iluminación LED <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
           {/* Audífonos */}
           <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
-            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-brand-red">
               <Headphones className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Audífonos y Monitoreo</h3>
             <p className="text-xs text-[#94a3b8] leading-relaxed">
               Audífonos Over-Ear premium con cancelación activa de ruido (ANC) híbrida, audífonos in-ear deportivos resistentes al sudor y cascos circumaurales de monitoreo de estudio.
             </p>
-            <Link to="/productos?categoria=audifonos" className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00f0ff] hover:underline">
+            <Link to="/productos?categoria=audifonos" className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red hover:underline">
               Ver audífonos y auriculares <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -917,7 +917,7 @@ function CatalogView() {
       {/* Breadcrumb below banner */}
       <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
-          <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
+          <Link to="/" className="hover:text-brand-red">Inicio</Link>
           <span>/</span>
           <span className="font-bold text-[#cbd5e1]">Catálogo de Productos</span>
         </div>
@@ -939,7 +939,7 @@ function CatalogView() {
                 setSearchParams(searchParams);
                 setSearchQuery("");
               }}
-              className={`px-5 py-2.5 text-xs font-extrabold uppercase rounded border transition-all duration-200 ${activeBrand === brand.id ? 'bg-[#00f0ff] text-white border-slate-700 shadow-sm' : 'bg-[#0f172a] text-[#cbd5e1] border-white/5 hover:border-slate-700'}`}
+              className={`px-5 py-2.5 text-xs font-extrabold uppercase rounded border transition-all duration-200 ${activeBrand === brand.id ? 'bg-brand-red text-white border-slate-700 shadow-sm' : 'bg-[#0f172a] text-[#cbd5e1] border-white/5 hover:border-slate-700'}`}
             >
               {brand.name}
             </button>
@@ -983,7 +983,7 @@ function CatalogView() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar modelo..."
-                className="w-full text-xs pl-8 pr-3 py-2 rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] text-[#cbd5e1] focus:outline-none transition-all placeholder-slate-400"
+                className="w-full text-xs pl-8 pr-3 py-2 rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red text-[#cbd5e1] focus:outline-none transition-all placeholder-slate-400"
               />
               <Search className="absolute left-2.5 top-2.5 w-3.5 h-3.5 text-slate-400" />
             </div>
@@ -1008,10 +1008,10 @@ function CatalogView() {
                     }
                     setSearchParams(searchParams);
                   }}
-                  className={`w-full text-left text-xs py-2 px-2 rounded flex items-center justify-between transition-all ${selectedCategory === cat.id ? 'bg-[#1e293b] text-[#00f0ff] font-bold' : 'text-[#94a3b8] hover:bg-[#060814] hover:text-[#f8fafc]'}`}
+                  className={`w-full text-left text-xs py-2 px-2 rounded flex items-center justify-between transition-all ${selectedCategory === cat.id ? 'bg-[#1e293b] text-brand-red font-bold' : 'text-[#94a3b8] hover:bg-[#060814] hover:text-[#f8fafc]'}`}
                 >
                   <span>{cat.label}</span>
-                  {selectedCategory === cat.id && <Check className="w-3.5 h-3.5 text-[#00f0ff]" />}
+                  {selectedCategory === cat.id && <Check className="w-3.5 h-3.5 text-brand-red" />}
                 </button>
               ))}
             </div>
@@ -1019,7 +1019,7 @@ function CatalogView() {
 
           <div className="bg-[#0f172a] rounded-lg border border-white/5 p-5 shadow-sm text-xs text-[#94a3b8] leading-relaxed text-justify space-y-2">
             <h4 className="font-bold text-[#cbd5e1] flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#00f0ff]" /> Cotizador Corporativo
+              <ShieldCheck className="w-4 h-4 text-brand-red" /> Cotizador Corporativo
             </h4>
             <p>
               El sitio web es de carácter **informativo**. No integramos pasarela de pagos ni cobros electrónicos en línea. Seleccione sus equipos y genere su requisición formal de cotización en el formulario de la pestaña de Contacto.
@@ -1064,7 +1064,7 @@ function CatalogView() {
                   </div>
 
                   <div className="p-5 flex flex-col flex-grow">
-                    <h4 className="text-sm font-bold text-[#f8fafc] mb-1.5 line-clamp-1 group-hover:text-[#00f0ff] transition-colors">
+                    <h4 className="text-sm font-bold text-[#f8fafc] mb-1.5 line-clamp-1 group-hover:text-brand-red transition-colors">
                       {product.name}
                     </h4>
                     <p className="text-[11px] text-slate-400 mb-4 line-clamp-2 leading-relaxed">
@@ -1076,7 +1076,7 @@ function CatalogView() {
                       <ul className="space-y-1">
                         {product.specs.slice(0, 3).map((spec, idx) => (
                           <li key={idx} className="text-[10px] text-[#94a3b8] flex items-start gap-1">
-                            <span className="w-1 h-1 rounded-full bg-[#00f0ff] shrink-0 mt-1.5"></span>
+                            <span className="w-1 h-1 rounded-full bg-brand-red shrink-0 mt-1.5"></span>
                             <span className="line-clamp-1">{spec}</span>
                           </li>
                         ))}
@@ -1088,7 +1088,7 @@ function CatalogView() {
                         <p className="text-[9px] text-slate-400 uppercase tracking-widest font-semibold">Precio de lista (Est.)</p>
                         <p className="text-xs font-black text-[#cbd5e1]">{product.price}</p>
                       </div>
-                      <span className="px-3.5 py-1.5 text-[10px] font-bold uppercase rounded bg-slate-900 text-white group-hover:bg-[#00f0ff] transition-all">
+                      <span className="px-3.5 py-1.5 text-[10px] font-bold uppercase rounded bg-slate-900 text-white group-hover:bg-brand-red transition-all">
                         Ver Detalle
                       </span>
                     </div>
@@ -1131,7 +1131,7 @@ function AboutView() {
       {/* Breadcrumb below banner */}
       <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
-          <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
+          <Link to="/" className="hover:text-brand-red">Inicio</Link>
           <span>/</span>
           <span className="font-bold text-[#cbd5e1]">Nosotros</span>
         </div>
@@ -1141,7 +1141,7 @@ function AboutView() {
         
         <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
           <h2 className="text-3xl font-bold text-[#f8fafc] mb-4 border-b pb-4 flex items-center gap-2">
-            <Award className="w-8 h-8 text-[#00f0ff]" /> Nosotros e Infraestructura
+            <Award className="w-8 h-8 text-brand-red" /> Nosotros e Infraestructura
           </h2>
           <p className="text-xs md:text-sm text-[#94a3b8] leading-relaxed text-justify">
             {SITE_DATA.brandName} (bajo la razón social *{SITE_DATA.legalName}*) es un corporativo de capital mexicano encargado de la importación directa y distribución mayorista de soluciones tecnológicas de sonido profesional e iluminación inteligente. Proveemos un canal transparente y seguro para constructoras, contratistas del gobierno y distribuidores minoristas en el territorio nacional.
@@ -1155,7 +1155,7 @@ function AboutView() {
             { title: "Soporte Técnico Especializado", desc: "Atención postventa, pólizas de garantía de 1 año y refacciones originales para proyectos comerciales." }
           ].map((item, idx) => (
             <div key={idx} className="bg-[#0f172a] rounded-lg border border-white/5 p-6 space-y-3 shadow-sm">
-              <CheckCircle className="w-8 h-8 text-[#00f0ff]" />
+              <CheckCircle className="w-8 h-8 text-brand-red" />
               <h4 className="text-sm font-bold text-[#f8fafc] uppercase">{item.title}</h4>
               <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
             </div>
@@ -1171,7 +1171,7 @@ function AboutView() {
           </div>
           <div className="space-y-4 bg-[#060814] p-6 rounded border border-white/5 text-xs text-[#94a3b8]">
             <h4 className="font-bold text-[#cbd5e1] flex items-center gap-1.5">
-              <Lock className="w-4 h-4 text-[#00f0ff]" /> Transacciones Corporativas
+              <Lock className="w-4 h-4 text-brand-red" /> Transacciones Corporativas
             </h4>
             <p>
               Las cotizaciones se gestionan directamente a nivel administrativo mediante transferencias electrónicas a la cuenta de la persona moral *{SITE_DATA.legalName}*. No se reciben cobros electrónicos con tarjetas en este portal.
@@ -1251,7 +1251,7 @@ function ContactView() {
       {/* Breadcrumb below banner */}
       <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
-          <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
+          <Link to="/" className="hover:text-brand-red">Inicio</Link>
           <span>/</span>
           <span className="font-bold text-[#cbd5e1]">Contáctanos</span>
         </div>
@@ -1265,29 +1265,29 @@ function ContactView() {
             
             {/* Teléfono */}
             <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red shrink-0">
                 <Phone className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Teléfono</span>
-              <a href={`tel:${SITE_DATA.phone}`} className="text-sm font-bold text-[#cbd5e1] hover:text-[#00f0ff] transition-all">
+              <a href={`tel:${SITE_DATA.phone}`} className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all">
                 {SITE_DATA.phone}
               </a>
             </div>
 
             {/* Buzón */}
             <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Buzón</span>
-              <a href={`mailto:${SITE_DATA.supportEmail}`} className="text-sm font-bold text-[#cbd5e1] hover:text-[#00f0ff] transition-all break-all">
+              <a href={`mailto:${SITE_DATA.supportEmail}`} className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all break-all">
                 {SITE_DATA.supportEmail}
               </a>
             </div>
 
             {/* Dirección */}
             <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red shrink-0">
                 <MapPin className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Dirección</span>
@@ -1298,7 +1298,7 @@ function ContactView() {
 
             {/* Whatsapp */}
             <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0 text-xs font-bold">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red shrink-0 text-xs font-bold">
                 W
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Whatsapp</span>
@@ -1306,7 +1306,7 @@ function ContactView() {
                 href={`https://wa.me/525574552441`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-sm font-bold text-[#cbd5e1] hover:text-[#00f0ff] transition-all"
+                className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all"
               >
                 +525574552441
               </a>
@@ -1325,7 +1325,7 @@ function ContactView() {
 
           {formSubmitted ? (
             <div className="py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-brand-red/10 text-[#00f0ff] flex items-center justify-center mx-auto mb-4 border border-[#00f0ff]/30">
+              <div className="w-12 h-12 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center mx-auto mb-4 border border-brand-red/30">
                 <CheckCircle className="w-6 h-6" />
               </div>
               <h4 className="text-base font-bold text-[#cbd5e1] mb-1">¡Mensaje Enviado Correctamente!</h4>
@@ -1344,7 +1344,7 @@ function ContactView() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Nombre Completo *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1355,7 +1355,7 @@ function ContactView() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Teléfono *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1369,7 +1369,7 @@ function ContactView() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Correo Electrónico *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1379,7 +1379,7 @@ function ContactView() {
                     value={formData.state}
                     onChange={handleInputChange}
                     placeholder="Estado / Ciudad"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1392,7 +1392,7 @@ function ContactView() {
                     value={formData.company}
                     onChange={handleInputChange}
                     placeholder="Nombre de la empresa"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1402,7 +1402,7 @@ function ContactView() {
                     value={formData.productInterest}
                     onChange={handleInputChange}
                     placeholder="Productos de interés"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1415,17 +1415,17 @@ function ContactView() {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Detalles de su proyecto / Comentarios adicionales..."
-                  className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all resize-none text-[#cbd5e1] placeholder-slate-400"
+                  className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-brand-red focus:outline-none transition-all resize-none text-[#cbd5e1] placeholder-slate-400"
                 ></textarea>
               </div>
 
               <div className="flex justify-start">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#00f0ff] hover:bg-brand-red-hover font-bold uppercase tracking-wider text-white rounded-full text-xs transition-all flex items-center justify-between gap-3 shadow-sm group"
+                  className="px-6 py-3 bg-brand-red hover:bg-brand-red-hover font-bold uppercase tracking-wider text-white rounded-full text-xs transition-all flex items-center justify-between gap-3 shadow-sm group"
                 >
                   <span>Enviar Mensaje</span>
-                  <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-[#00f0ff] font-bold text-xs group-hover:translate-x-0.5 transition-transform">
+                  <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-brand-red font-bold text-xs group-hover:translate-x-0.5 transition-transform">
                     →
                   </span>
                 </button>
@@ -1449,7 +1449,7 @@ function ProductDetailView() {
     return (
       <div className="max-w-7xl mx-auto px-4 py-16 text-center animate-fadeIn">
         <h2 className="text-xl font-bold text-[#cbd5e1]">Producto no encontrado</h2>
-        <Link to="/productos" className="text-[#00f0ff] hover:underline mt-4 inline-block font-semibold">Volver al catálogo</Link>
+        <Link to="/productos" className="text-brand-red hover:underline mt-4 inline-block font-semibold">Volver al catálogo</Link>
       </div>
     );
   }
@@ -1468,9 +1468,9 @@ function ProductDetailView() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fadeIn">
       {/* Breadcrumb matching Megaluz details */}
       <div className="text-xs text-[#94a3b8] mb-6 flex flex-wrap items-center gap-1.5">
-        <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
+        <Link to="/" className="hover:text-brand-red">Inicio</Link>
         <span>/</span>
-        <Link to="/productos" className="hover:text-[#00f0ff]">Catálogo</Link>
+        <Link to="/productos" className="hover:text-brand-red">Catálogo</Link>
         <span>/</span>
         <span className="text-slate-400 capitalize">{product.category === 'bocina' ? 'Bocina' : product.category === 'luces-led' ? 'Luces LED' : 'Audífonos'}</span>
         <span>/</span>
@@ -1522,10 +1522,10 @@ function ProductDetailView() {
             {/* Contáctanos button */}
             <button 
               onClick={() => navigate(`/contacto?producto=${encodeURIComponent(product.name)}`)}
-              className="bg-[#00f0ff] hover:bg-brand-red-hover text-white px-6 py-3 rounded-full font-bold text-xs uppercase flex items-center justify-between gap-3 shadow-md group transition-all"
+              className="bg-brand-red hover:bg-brand-red-hover text-white px-6 py-3 rounded-full font-bold text-xs uppercase flex items-center justify-between gap-3 shadow-md group transition-all"
             >
               <span>Contáctanos para Cotizar</span>
-              <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-[#00f0ff] text-[9px] group-hover:translate-x-0.5 transition-transform font-black">
+              <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-brand-red text-[9px] group-hover:translate-x-0.5 transition-transform font-black">
                 ▶
               </span>
             </button>
@@ -1545,7 +1545,7 @@ function PrivacyView() {
     <div className="max-w-3xl mx-auto py-12 px-4 animate-fadeIn">
       <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
         <h1 className="text-2xl font-bold mb-6 text-[#f8fafc] border-b pb-4 flex items-center gap-2">
-          <ShieldCheck className="w-7 h-7 text-[#00f0ff]" /> {SITE_DATA.legal.privacy.title}
+          <ShieldCheck className="w-7 h-7 text-brand-red" /> {SITE_DATA.legal.privacy.title}
         </h1>
         <div className="text-xs text-[#94a3b8] space-y-4 leading-relaxed whitespace-pre-line text-justify">
           {SITE_DATA.legal.privacy.content}
@@ -1561,7 +1561,7 @@ function TermsView() {
     <div className="max-w-3xl mx-auto py-12 px-4 animate-fadeIn">
       <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
         <h1 className="text-2xl font-bold mb-6 text-[#f8fafc] border-b pb-4 flex items-center gap-2">
-          <FileText className="w-7 h-7 text-[#00f0ff]" /> {SITE_DATA.legal.terms.title}
+          <FileText className="w-7 h-7 text-brand-red" /> {SITE_DATA.legal.terms.title}
         </h1>
         <div className="text-xs text-[#94a3b8] space-y-4 leading-relaxed whitespace-pre-line text-justify">
           {SITE_DATA.legal.terms.content}
