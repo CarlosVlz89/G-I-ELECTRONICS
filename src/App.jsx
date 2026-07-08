@@ -589,7 +589,7 @@ function Layout() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-[#94a3b8] hover:text-slate-950 hover:bg-[#1e293b] transition-colors focus:outline-none"
+            className="md:hidden p-2 rounded-lg text-[#94a3b8] hover:text-white hover:bg-[#1e293b] transition-colors focus:outline-none"
             aria-label="Abrir menú"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -799,7 +799,7 @@ function HomeView() {
       {/* Solutions highlights grid */}
       <section className="py-20 bg-[#060814] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 uppercase tracking-wide">Líneas de Solución Corporativa</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#f8fafc] uppercase tracking-wide">Líneas de Solución Corporativa</h2>
           <p className="text-xs text-[#94a3b8] mt-2">Suministro tecnológico de grado comercial para corporativos y constructoras.</p>
         </div>
 
@@ -1172,7 +1172,7 @@ function AboutView() {
 
         <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-slate-950 uppercase">Validación Fiscal y de Activos</h3>
+            <h3 className="text-xl font-bold text-[#f8fafc] uppercase">Validación Fiscal y de Activos</h3>
             <p className="text-xs text-[#94a3b8] leading-relaxed text-justify">
               Entendemos los requerimientos de las instituciones financieras y auditorías administrativas. Por ello, {SITE_DATA.brandName} proporciona de manera transparente toda la documentación corporativa de soporte a nuestros clientes: constancia de situación fiscal del SAT, opinión de cumplimiento positiva en sentido fiscal, cuentas de banco validadas de la persona moral, e identificaciones aduanales de procedencia de equipos.
             </p>
