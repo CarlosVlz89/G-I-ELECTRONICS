@@ -402,7 +402,7 @@ function ProductVisualizer({ type }) {
   switch (type) {
     case 'speaker':
       return (
-        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-slate-800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="speakerGlowLight" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.1" />
@@ -426,7 +426,7 @@ function ProductVisualizer({ type }) {
       );
     case 'microphone':
       return (
-        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-slate-800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="micGlowLight" cx="50%" cy="40%" r="40%">
               <stop offset="0%" stopColor="#10b981" stopOpacity="0.15" />
@@ -446,7 +446,7 @@ function ProductVisualizer({ type }) {
       );
     case 'led-strip':
       return (
-        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-slate-800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="neonPathLight" x1="0%" y1="50%" x2="100%" y2="50%">
               <stop offset="0%" stopColor="#ef4444" />
@@ -464,7 +464,7 @@ function ProductVisualizer({ type }) {
       );
     case 'screen':
       return (
-        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-slate-800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="25" y="35" width="150" height="100" rx="3" fill="#0f172a" stroke="#475569" strokeWidth="2" />
           <rect x="30" y="40" width="140" height="90" fill="#1e293b" />
           <line x1="76" y1="40" x2="76" y2="130" stroke="#0f172a" strokeWidth="1" opacity="0.4" />
@@ -478,7 +478,7 @@ function ProductVisualizer({ type }) {
       );
     case 'controller':
       return (
-        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-slate-800" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-44 bg-[#1e293b] rounded-lg p-4 border border-white/5" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="25" y="35" width="150" height="130" rx="6" fill="#334155" stroke="#1e293b" strokeWidth="2" />
           <rect x="32" y="42" width="136" height="116" rx="2" fill="#0f172a" />
           <rect x="42" y="50" width="40" height="20" rx="1" fill="#1e293b" stroke="#00f0ff" strokeWidth="1" />
@@ -498,7 +498,7 @@ function ProductVisualizer({ type }) {
       );
     default:
       return (
-        <div className="w-full h-44 bg-[#1e293b] rounded-lg flex items-center justify-center border border-slate-800">
+        <div className="w-full h-44 bg-[#1e293b] rounded-lg flex items-center justify-center border border-white/5">
           <Volume2 className="w-12 h-12 text-slate-300" />
         </div>
       );
@@ -524,8 +524,14 @@ function Layout() {
   return (
     <div className="min-h-screen bg-[#060814] text-[#f8fafc] flex flex-col antialiased selection:bg-[#00f0ff] selection:text-white font-sans">
       
+      
+      {/* Liquid Glow background effects */}
+      <div className="absolute top-[-10%] left-[-20%] w-[60vw] h-[60vw] rounded-full bg-[#0ea5e9]/8 blur-[120px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '8s' }}></div>
+      <div className="absolute bottom-[20%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-[#3b82f6]/6 blur-[150px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '12s' }}></div>
+      <div className="absolute top-[40%] left-[30%] w-[40vw] h-[40vw] rounded-full bg-[#00f0ff]/5 blur-[130px] pointer-events-none z-0 animate-pulse" style={{ animationDuration: '10s' }}></div>
+
       {/* Header / Navbar */}
-      <header className="sticky top-0 z-40 w-full border-b border-slate-800 bg-[#0f172a] shadow-sm transition-all duration-300">
+      <header className="sticky top-0 z-40 w-full border-b border-white/5 bg-[#0f172a] shadow-sm transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Logo */}
@@ -592,7 +598,7 @@ function Layout() {
 
         {/* Mobile Dropdown Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-20 left-0 w-full bg-[#0f172a] border-b border-slate-800 py-6 px-4 space-y-4 shadow-lg animate-fadeIn z-50">
+          <div className="md:hidden absolute top-20 left-0 w-full bg-[#0f172a] border-b border-white/5 py-6 px-4 space-y-4 shadow-lg animate-fadeIn z-50">
             <div className="flex flex-col gap-4">
               {SITE_DATA.navigation.map((item, idx) => (
                 <NavLink
@@ -601,7 +607,7 @@ function Layout() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) => 
                     `text-base font-semibold px-2 py-1.5 rounded-md transition-all ${
-                      isActive ? 'bg-[#00f0ff]/10 text-[#00f0ff]' : 'text-[#cbd5e1] hover:text-[#00f0ff] hover:bg-[#060814]'
+                      isActive ? 'bg-brand-red/10 text-[#00f0ff]' : 'text-[#cbd5e1] hover:text-[#00f0ff] hover:bg-[#060814]'
                     }`
                   }
                 >
@@ -611,7 +617,7 @@ function Layout() {
               <Link
                 to="/contacto"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-3 bg-[#00f0ff] text-white font-bold rounded hover:bg-[#00f0ff]-hover transition-all"
+                className="w-full text-center py-3 bg-[#00f0ff] text-white font-bold rounded hover:bg-brand-red-hover transition-all"
               >
                 Solicitar Cotización
               </Link>
@@ -629,7 +635,7 @@ function Layout() {
       <footer className="bg-[#0b0f19] text-slate-400 border-t border-slate-900 pt-16 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-white/5">
             
             {/* Col 1: Brand Info */}
             <div className="col-span-2 space-y-4">
@@ -800,8 +806,8 @@ function HomeView() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {/* Bocinas */}
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm space-y-4 hover:border-[#00f0ff]/30 transition-all">
-            <div className="w-10 h-10 rounded bg-[#00f0ff]/10 flex items-center justify-center text-[#00f0ff]">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
               <Volume2 className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Audio y Bocinas</h3>
@@ -814,8 +820,8 @@ function HomeView() {
           </div>
 
           {/* Luces LED */}
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm space-y-4 hover:border-[#00f0ff]/30 transition-all">
-            <div className="w-10 h-10 rounded bg-[#00f0ff]/10 flex items-center justify-center text-[#00f0ff]">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
               <Zap className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Luces LED e Iluminación</h3>
@@ -828,8 +834,8 @@ function HomeView() {
           </div>
 
           {/* Audífonos */}
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm space-y-4 hover:border-[#00f0ff]/30 transition-all">
-            <div className="w-10 h-10 rounded bg-[#00f0ff]/10 flex items-center justify-center text-[#00f0ff]">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm space-y-4 hover:border-brand-red/30 transition-all">
+            <div className="w-10 h-10 rounded bg-brand-red/10 flex items-center justify-center text-[#00f0ff]">
               <Headphones className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-[#f8fafc] uppercase">Audífonos y Monitoreo</h3>
@@ -909,7 +915,7 @@ function CatalogView() {
       </div>
 
       {/* Breadcrumb below banner */}
-      <div className="bg-[#1e293b] border-b border-slate-800 py-3">
+      <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
           <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
           <span>/</span>
@@ -920,7 +926,7 @@ function CatalogView() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       
       {/* Brand Tabs */}
-      <div className="mb-6 border-b border-slate-800 pb-2">
+      <div className="mb-6 border-b border-white/5 pb-2">
         <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Filtrar por Línea de Marca</h2>
         <div className="flex flex-wrap gap-2">
           {SITE_DATA.brands.map((brand) => (
@@ -933,7 +939,7 @@ function CatalogView() {
                 setSearchParams(searchParams);
                 setSearchQuery("");
               }}
-              className={`px-5 py-2.5 text-xs font-extrabold uppercase rounded border transition-all duration-200 ${activeBrand === brand.id ? 'bg-[#00f0ff] text-white border-slate-700 shadow-sm' : 'bg-[#0f172a] text-[#cbd5e1] border-slate-800 hover:border-slate-700'}`}
+              className={`px-5 py-2.5 text-xs font-extrabold uppercase rounded border transition-all duration-200 ${activeBrand === brand.id ? 'bg-[#00f0ff] text-white border-slate-700 shadow-sm' : 'bg-[#0f172a] text-[#cbd5e1] border-white/5 hover:border-slate-700'}`}
             >
               {brand.name}
             </button>
@@ -942,10 +948,10 @@ function CatalogView() {
       </div>
 
       {/* Selected Brand Info Box */}
-      <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 mb-8 flex flex-col md:flex-row items-start gap-6 shadow-sm">
+      <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 mb-8 flex flex-col md:flex-row items-start gap-6 shadow-sm">
         <div className="flex flex-col items-center md:items-start shrink-0">
           <div 
-            className="px-5 py-3.5 rounded font-black text-lg tracking-widest uppercase border border-slate-800 shadow-inner flex items-center justify-center min-w-[130px] text-center"
+            className="px-5 py-3.5 rounded font-black text-lg tracking-widest uppercase border border-white/5 shadow-inner flex items-center justify-center min-w-[130px] text-center"
             style={{ color: currentBrandData.logoColor, borderColor: `${currentBrandData.logoColor}20`, backgroundColor: `${currentBrandData.logoColor}05` }}
           >
             {currentBrandData.logoText}
@@ -967,7 +973,7 @@ function CatalogView() {
         
         {/* Sidebar */}
         <aside className="lg:col-span-3 space-y-6">
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-5 shadow-sm">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-5 shadow-sm">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#cbd5e1] mb-3 flex items-center gap-2">
               <Search className="w-3.5 h-3.5 text-slate-400" /> Filtrar por Modelo
             </h4>
@@ -977,13 +983,13 @@ function CatalogView() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar modelo..."
-                className="w-full text-xs pl-8 pr-3 py-2 rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] text-[#cbd5e1] focus:outline-none transition-all placeholder-slate-400"
+                className="w-full text-xs pl-8 pr-3 py-2 rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] text-[#cbd5e1] focus:outline-none transition-all placeholder-slate-400"
               />
               <Search className="absolute left-2.5 top-2.5 w-3.5 h-3.5 text-slate-400" />
             </div>
           </div>
 
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-5 shadow-sm">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-5 shadow-sm">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#cbd5e1] mb-3">Categorías</h4>
             <div className="space-y-1.5">
               {[
@@ -1011,7 +1017,7 @@ function CatalogView() {
             </div>
           </div>
 
-          <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-5 shadow-sm text-xs text-[#94a3b8] leading-relaxed text-justify space-y-2">
+          <div className="bg-[#0f172a] rounded-lg border border-white/5 p-5 shadow-sm text-xs text-[#94a3b8] leading-relaxed text-justify space-y-2">
             <h4 className="font-bold text-[#cbd5e1] flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-[#00f0ff]" /> Cotizador Corporativo
             </h4>
@@ -1023,14 +1029,14 @@ function CatalogView() {
 
         {/* Products Grid */}
         <section className="lg:col-span-9 space-y-6">
-          <div className="bg-[#0f172a] border border-slate-800 p-4 rounded-lg shadow-sm flex items-center justify-between text-xs text-[#94a3b8]">
+          <div className="bg-[#0f172a] border border-white/5 p-4 rounded-lg shadow-sm flex items-center justify-between text-xs text-[#94a3b8]">
             <span>
               Catálogo contiene <strong className="text-[#cbd5e1]">{filteredProducts.length}</strong> productos disponibles para la marca <strong className="text-[#cbd5e1] uppercase">{currentBrandData.name}</strong>
             </span>
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-16 text-center shadow-sm">
+            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-16 text-center shadow-sm">
               <Sliders className="w-10 h-10 text-slate-300 mx-auto mb-3" />
               <h4 className="text-xs font-bold text-[#cbd5e1] mb-1">Sin resultados</h4>
               <p className="text-[11px] text-slate-400 max-w-xs mx-auto">
@@ -1043,7 +1049,7 @@ function CatalogView() {
                 <Link 
                   key={product.id}
                   to={`/producto/${product.id}`}
-                  className="group bg-[#0f172a] rounded-lg border border-slate-800 overflow-hidden flex flex-col hover:border-slate-700 hover:shadow-md transition-all duration-200 text-left"
+                  className="group bg-[#0f172a] rounded-lg border border-white/5 overflow-hidden flex flex-col hover:border-slate-700 hover:shadow-md transition-all duration-200 text-left"
                 >
                   <div className="h-44 bg-[#1e293b] relative overflow-hidden flex items-center justify-center">
                     <img 
@@ -1052,7 +1058,7 @@ function CatalogView() {
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <span className="absolute top-4 right-4 bg-[#0f172a]/90 border border-slate-800 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded text-[#94a3b8]">
+                    <span className="absolute top-4 right-4 bg-[#0f172a]/90 border border-white/5 text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded text-[#94a3b8]">
                       {product.category}
                     </span>
                   </div>
@@ -1123,7 +1129,7 @@ function AboutView() {
       </div>
 
       {/* Breadcrumb below banner */}
-      <div className="bg-[#1e293b] border-b border-slate-800 py-3">
+      <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
           <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
           <span>/</span>
@@ -1133,7 +1139,7 @@ function AboutView() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
         
-        <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm">
+        <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
           <h2 className="text-3xl font-bold text-[#f8fafc] mb-4 border-b pb-4 flex items-center gap-2">
             <Award className="w-8 h-8 text-[#00f0ff]" /> Nosotros e Infraestructura
           </h2>
@@ -1148,7 +1154,7 @@ function AboutView() {
             { title: "Estándares Eléctricos", desc: "Inspección rigurosa y cumplimiento de estándares de seguridad eléctrica para todos los equipos importados." },
             { title: "Soporte Técnico Especializado", desc: "Atención postventa, pólizas de garantía de 1 año y refacciones originales para proyectos comerciales." }
           ].map((item, idx) => (
-            <div key={idx} className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 space-y-3 shadow-sm">
+            <div key={idx} className="bg-[#0f172a] rounded-lg border border-white/5 p-6 space-y-3 shadow-sm">
               <CheckCircle className="w-8 h-8 text-[#00f0ff]" />
               <h4 className="text-sm font-bold text-[#f8fafc] uppercase">{item.title}</h4>
               <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
@@ -1156,14 +1162,14 @@ function AboutView() {
           ))}
         </div>
 
-        <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm grid md:grid-cols-2 gap-8 items-center">
+        <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-slate-950 uppercase">Validación Fiscal y de Activos</h3>
             <p className="text-xs text-[#94a3b8] leading-relaxed text-justify">
               Entendemos los requerimientos de las instituciones financieras y auditorías administrativas. Por ello, {SITE_DATA.brandName} proporciona de manera transparente toda la documentación corporativa de soporte a nuestros clientes: constancia de situación fiscal del SAT, opinión de cumplimiento positiva en sentido fiscal, cuentas de banco validadas de la persona moral, e identificaciones aduanales de procedencia de equipos.
             </p>
           </div>
-          <div className="space-y-4 bg-[#060814] p-6 rounded border border-slate-800 text-xs text-[#94a3b8]">
+          <div className="space-y-4 bg-[#060814] p-6 rounded border border-white/5 text-xs text-[#94a3b8]">
             <h4 className="font-bold text-[#cbd5e1] flex items-center gap-1.5">
               <Lock className="w-4 h-4 text-[#00f0ff]" /> Transacciones Corporativas
             </h4>
@@ -1243,7 +1249,7 @@ function ContactView() {
       </div>
 
       {/* Breadcrumb below banner */}
-      <div className="bg-[#1e293b] border-b border-slate-800 py-3">
+      <div className="bg-[#1e293b] border-b border-white/5 py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-[#94a3b8] flex items-center gap-2">
           <Link to="/" className="hover:text-[#00f0ff]">Inicio</Link>
           <span>/</span>
@@ -1258,8 +1264,8 @@ function ContactView() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Teléfono */}
-            <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
                 <Phone className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Teléfono</span>
@@ -1269,8 +1275,8 @@ function ContactView() {
             </div>
 
             {/* Buzón */}
-            <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
                 <Mail className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Buzón</span>
@@ -1280,8 +1286,8 @@ function ContactView() {
             </div>
 
             {/* Dirección */}
-            <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
+            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0">
                 <MapPin className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Dirección</span>
@@ -1291,8 +1297,8 @@ function ContactView() {
             </div>
 
             {/* Whatsapp */}
-            <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0 text-xs font-bold">
+            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
+              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-[#00f0ff]/20 flex items-center justify-center text-[#00f0ff] shrink-0 text-xs font-bold">
                 W
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Whatsapp</span>
@@ -1309,7 +1315,7 @@ function ContactView() {
         </div>
 
         {/* Distributor recruitment Form */}
-        <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-6 md:p-8 shadow-sm max-w-4xl mx-auto">
+        <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 md:p-8 shadow-sm max-w-4xl mx-auto">
           <h2 className="text-xl font-bold text-center text-[#f8fafc] mb-2 uppercase tracking-wide">
             ¿Te interesa formar parte de nuestros distribuidores?
           </h2>
@@ -1319,7 +1325,7 @@ function ContactView() {
 
           {formSubmitted ? (
             <div className="py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-[#00f0ff]/10 text-[#00f0ff] flex items-center justify-center mx-auto mb-4 border border-[#00f0ff]/30">
+              <div className="w-12 h-12 rounded-full bg-brand-red/10 text-[#00f0ff] flex items-center justify-center mx-auto mb-4 border border-[#00f0ff]/30">
                 <CheckCircle className="w-6 h-6" />
               </div>
               <h4 className="text-base font-bold text-[#cbd5e1] mb-1">¡Mensaje Enviado Correctamente!</h4>
@@ -1338,7 +1344,7 @@ function ContactView() {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Nombre Completo *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1349,7 +1355,7 @@ function ContactView() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     placeholder="Teléfono *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1363,7 +1369,7 @@ function ContactView() {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Correo Electrónico *"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1373,7 +1379,7 @@ function ContactView() {
                     value={formData.state}
                     onChange={handleInputChange}
                     placeholder="Estado / Ciudad"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1386,7 +1392,7 @@ function ContactView() {
                     value={formData.company}
                     onChange={handleInputChange}
                     placeholder="Nombre de la empresa"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
                 <div>
@@ -1396,7 +1402,7 @@ function ContactView() {
                     value={formData.productInterest}
                     onChange={handleInputChange}
                     placeholder="Productos de interés"
-                    className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
+                    className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all text-[#cbd5e1] placeholder-slate-400"
                   />
                 </div>
               </div>
@@ -1409,14 +1415,14 @@ function ContactView() {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Detalles de su proyecto / Comentarios adicionales..."
-                  className="w-full px-3 py-2.5 text-xs rounded border border-slate-800 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all resize-none text-[#cbd5e1] placeholder-slate-400"
+                  className="w-full px-3 py-2.5 text-xs rounded border border-white/5 bg-[#060814] focus:bg-[#0f172a] focus:border-[#00f0ff] focus:outline-none transition-all resize-none text-[#cbd5e1] placeholder-slate-400"
                 ></textarea>
               </div>
 
               <div className="flex justify-start">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#00f0ff] hover:bg-[#00f0ff]-hover font-bold uppercase tracking-wider text-white rounded-full text-xs transition-all flex items-center justify-between gap-3 shadow-sm group"
+                  className="px-6 py-3 bg-[#00f0ff] hover:bg-brand-red-hover font-bold uppercase tracking-wider text-white rounded-full text-xs transition-all flex items-center justify-between gap-3 shadow-sm group"
                 >
                   <span>Enviar Mensaje</span>
                   <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-[#00f0ff] font-bold text-xs group-hover:translate-x-0.5 transition-transform">
@@ -1471,7 +1477,7 @@ function ProductDetailView() {
         <span className="font-bold text-[#cbd5e1] uppercase">{product.brand}</span>
       </div>
 
-      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 bg-[#0f172a] rounded-lg border border-slate-800 p-6 md:p-8 shadow-sm">
+      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 bg-[#0f172a] rounded-lg border border-white/5 p-6 md:p-8 shadow-sm">
         
         {/* Left Column: Image with Thumbnails */}
         <div className="lg:col-span-6 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
@@ -1480,16 +1486,16 @@ function ProductDetailView() {
             <div className="w-12 h-12 rounded border-2 border-brand-red overflow-hidden p-0.5 bg-[#0f172a] cursor-pointer shadow-sm">
               <img src={formatImageUrl(product.imageUrl)} alt="Thumbnail 1" className="w-full h-full object-contain" />
             </div>
-            <div className="w-12 h-12 rounded border border-slate-800 overflow-hidden p-0.5 bg-[#0f172a] opacity-40 cursor-not-allowed shadow-sm">
+            <div className="w-12 h-12 rounded border border-white/5 overflow-hidden p-0.5 bg-[#0f172a] opacity-40 cursor-not-allowed shadow-sm">
               <img src={formatImageUrl(product.imageUrl)} alt="Thumbnail 2" className="w-full h-full object-contain" />
             </div>
-            <div className="w-12 h-12 rounded border border-slate-800 overflow-hidden p-0.5 bg-[#0f172a] opacity-40 cursor-not-allowed shadow-sm">
+            <div className="w-12 h-12 rounded border border-white/5 overflow-hidden p-0.5 bg-[#0f172a] opacity-40 cursor-not-allowed shadow-sm">
               <img src={formatImageUrl(product.imageUrl)} alt="Thumbnail 3" className="w-full h-full object-contain" />
             </div>
           </div>
           
           {/* Main big image view */}
-          <div className="flex-grow w-full bg-[#060814] rounded border border-slate-800 p-6 flex items-center justify-center min-h-[300px]">
+          <div className="flex-grow w-full bg-[#060814] rounded border border-white/5 p-6 flex items-center justify-center min-h-[300px]">
             <img 
               src={formatImageUrl(product.imageUrl)} 
               alt={product.name} 
@@ -1516,7 +1522,7 @@ function ProductDetailView() {
             {/* Contáctanos button */}
             <button 
               onClick={() => navigate(`/contacto?producto=${encodeURIComponent(product.name)}`)}
-              className="bg-[#00f0ff] hover:bg-[#00f0ff]-hover text-white px-6 py-3 rounded-full font-bold text-xs uppercase flex items-center justify-between gap-3 shadow-md group transition-all"
+              className="bg-[#00f0ff] hover:bg-brand-red-hover text-white px-6 py-3 rounded-full font-bold text-xs uppercase flex items-center justify-between gap-3 shadow-md group transition-all"
             >
               <span>Contáctanos para Cotizar</span>
               <span className="w-5 h-5 rounded-full bg-[#0f172a] flex items-center justify-center text-[#00f0ff] text-[9px] group-hover:translate-x-0.5 transition-transform font-black">
@@ -1537,7 +1543,7 @@ function ProductDetailView() {
 function PrivacyView() {
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 animate-fadeIn">
-      <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm">
+      <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
         <h1 className="text-2xl font-bold mb-6 text-[#f8fafc] border-b pb-4 flex items-center gap-2">
           <ShieldCheck className="w-7 h-7 text-[#00f0ff]" /> {SITE_DATA.legal.privacy.title}
         </h1>
@@ -1553,7 +1559,7 @@ function PrivacyView() {
 function TermsView() {
   return (
     <div className="max-w-3xl mx-auto py-12 px-4 animate-fadeIn">
-      <div className="bg-[#0f172a] rounded-lg border border-slate-800 p-8 shadow-sm">
+      <div className="bg-[#0f172a] rounded-lg border border-white/5 p-8 shadow-sm">
         <h1 className="text-2xl font-bold mb-6 text-[#f8fafc] border-b pb-4 flex items-center gap-2">
           <FileText className="w-7 h-7 text-[#00f0ff]" /> {SITE_DATA.legal.terms.title}
         </h1>
