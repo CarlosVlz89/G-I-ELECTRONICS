@@ -743,56 +743,95 @@ function HomeView() {
         <div className="absolute inset-0 bg-black/30 lg:bg-transparent z-0"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6 text-left">
+          <div className="grid lg:grid-cols-12 lg:gap-12 items-center">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-red-900/35 bg-red-950/40 text-red-400 text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
-              <Sparkles className="w-3.5 h-3.5" /> Equipamiento de Alta Fidelidad e Iluminación Inteligente
+            {/* Left column: Text content */}
+            <div className="col-span-7 space-y-6 text-left">
+              
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-red/30 bg-brand-red/10 text-brand-red text-xs font-semibold uppercase tracking-widest backdrop-blur-sm">
+                <Sparkles className="w-3.5 h-3.5" /> Tecnología de Audio e Iluminación Profesional
+              </div>
+
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-none font-display">
+                <span className="block text-slate-400 text-xl sm:text-2xl font-semibold tracking-normal mb-2 uppercase">
+                  {SITE_DATA.brandName}
+                </span>
+                POTENCIA ACÚSTICA.<br />
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                  ESPECTRO LUMÍNICO.
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed text-justify lg:text-left max-w-xl">
+                Expertos en la importación y comercialización de equipos de sonido de alta fidelidad, luminarias inteligentes y pantallas LED de alta densidad. Soluciones llave en mano para escenarios, constructoras e integradores comerciales con total validez legal y aduanera.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center lg:justify-start gap-4 pt-2">
+                <Link
+                  to="/productos"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-red hover:bg-brand-red-hover text-white font-bold rounded shadow-md transition-all duration-300 text-center flex items-center justify-center gap-2 group"
+                >
+                  Explorar Catálogo <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  to="/contacto"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#0f172a]/10 hover:bg-[#0f172a]/20 text-white font-semibold rounded border border-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300 text-center"
+                >
+                  Solicitar Cotización Formal
+                </Link>
+              </div>
+
+              {/* Quick stats with glassmorphic cards */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 max-w-xl">
+                {[
+                  { value: "Importación", label: "Directa y Legal" },
+                  { value: "SAT CFDI", label: "Facturas XML" },
+                  { value: "1 Año", label: "Garantía Escrita" },
+                  { value: "0% Interés", label: "Cotización Libre" }
+                ].map((stat, i) => (
+                  <div key={i} className="bg-brand-red/5 backdrop-blur-md border border-white/10 p-3 rounded text-center">
+                    <p className="text-sm font-bold text-white font-display">{stat.value}</p>
+                    <p className="text-[9px] text-slate-400 font-bold uppercase mt-0.5">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-none font-display">
-              <span className="block text-slate-400 text-xl sm:text-2xl font-semibold tracking-normal mb-2 uppercase">
-                {SITE_DATA.brandName}
-              </span>
-              PURE SOUND.<br />
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-                VIBRANT LIGHT.
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed text-justify lg:text-left max-w-xl">
-              Distribuidora e importadora corporativa líder en México. Suministramos sistemas acústicos profesionales, iluminación comercial avanzada, pantallas LED y soportes bajo pedimentos y normativas de importación aplicables.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center lg:justify-start gap-4 pt-2">
-              <Link
-                to="/productos"
-                className="w-full sm:w-auto px-8 py-4 bg-brand-red hover:bg-brand-red-hover text-white font-bold rounded shadow-md transition-all duration-300 text-center flex items-center justify-center gap-2 group"
-              >
-                Explorar Catálogo <ArrowRight className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/contacto"
-                className="w-full sm:w-auto px-8 py-4 bg-[#0f172a]/10 hover:bg-[#0f172a]/20 text-white font-semibold rounded border border-white/20 hover:border-white/40 backdrop-blur-sm transition-all duration-300 text-center"
-              >
-                Solicitar Cotización Formal
-              </Link>
-            </div>
-            
-            {/* Quick stats with glassmorphic cards */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 max-w-xl">
-              {[
-                { value: "Importación", label: "Directa y Legal" },
-                { value: "SAT CFDI", label: "Facturación Autorizada" },
-                { value: "1 Año", label: "Garantía de Fábrica" },
-                { value: "0% Interés", label: "Cotización Libre" }
-              ].map((stat, i) => (
-                <div key={i} className="bg-[#0f172a]/5 backdrop-blur-md border border-white/10 p-3 rounded text-center">
-                  <p className="text-sm font-bold text-white font-display">{stat.value}</p>
-                  <p className="text-[9px] text-slate-400 uppercase tracking-widest mt-1">{stat.label}</p>
+            {/* Right column: Floating dynamic glass card */}
+            <div className="hidden lg:flex col-span-5 justify-center relative">
+              <div className="bg-[#0f172a]/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl space-y-4 max-w-sm w-full relative z-10 hover:border-brand-red/30 transition-all duration-300">
+                <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-red animate-ping"></div>
+                    <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">Sistemas Activos</span>
+                  </div>
+                  <span className="text-[10px] text-slate-500 font-mono">G&I PRO v2.6</span>
                 </div>
-              ))}
+                <div className="space-y-3">
+                  <div className="h-24 bg-slate-950/60 rounded-lg flex items-end justify-between p-3 overflow-hidden border border-white/5 gap-1">
+                    {/* Visualizer animation bars */}
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-12" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-16" style={{ animationDelay: '0.3s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-8" style={{ animationDelay: '0.5s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-20" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-14" style={{ animationDelay: '0.4s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-10" style={{ animationDelay: '0.6s' }}></div>
+                    <div className="w-2 bg-brand-red rounded-t animate-pulse h-18" style={{ animationDelay: '0.1s' }}></div>
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="text-sm font-bold text-white leading-tight">Procesamiento DSP Avanzado</h4>
+                    <p className="text-[11px] text-slate-400 leading-normal">Optimización acústica en tiempo real y modulación DMX integrada para experiencias inmersivas.</p>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-brand-red pt-1">
+                  <span>Rendimiento Extremo</span>
+                  <span>100% Importación</span>
+                </div>
+              </div>
+              {/* Background accent glow */}
+              <div className="absolute w-48 h-48 rounded-full bg-brand-red/10 blur-[60px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"></div>
             </div>
-            
+
           </div>
         </div>
       </section>
