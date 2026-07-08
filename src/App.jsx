@@ -665,10 +665,10 @@ function Layout() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">Marcas</h4>
               <ul className="space-y-1.5 text-xs">
-                <li><Link to="/productos" className="hover:text-brand-red transition-all">G&I PRO</Link></li>
-                <li><Link to="/productos" className="hover:text-brand-red transition-all">TIANLAI</Link></li>
-                <li><Link to="/productos" className="hover:text-brand-red transition-all">MEGALUZ CONCERT</Link></li>
-                <li><Link to="/productos" className="hover:text-brand-red transition-all">GONEO</Link></li>
+                <li><Link to="/productos?marca=gipro" className="hover:text-brand-red transition-all">G&I PRO</Link></li>
+                <li><Link to="/productos?marca=tianlai" className="hover:text-brand-red transition-all">TIANLAI</Link></li>
+                <li><Link to="/productos?marca=megaluz" className="hover:text-brand-red transition-all">MEGALUZ CONCERT</Link></li>
+                <li><Link to="/productos?marca=goneo" className="hover:text-brand-red transition-all">GONEO</Link></li>
               </ul>
             </div>
 
@@ -851,15 +851,22 @@ function HomeView() {
   );
 }
 
-// 2. CATALOG VIEW
 function CatalogView() {
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get("categoria") || "all";
+  const brandParam = searchParams.get("marca") || "gipro";
 
-  const [activeBrand, setActiveBrand] = useState("gipro");
+  const [activeBrand, setActiveBrand] = useState(brandParam);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(categoryParam);
   const navigate = useNavigate();
+
+  // Sync activeBrand state with brandParam from URL query string
+  useEffect(() => {
+    if (brandParam && brandParam !== activeBrand) {
+      setActiveBrand(brandParam);
+    }
+  }, [brandParam, activeBrand]);
 
   // Keep selectedCategory in sync with URL parameter
   useEffect(() => {
@@ -875,11 +882,13 @@ function CatalogView() {
           SITE_DATA.products.some(p => p.brand === b.id && p.category === categoryParam)
         );
         if (matchingBrand) {
+          searchParams.set("marca", matchingBrand.id);
+          setSearchParams(searchParams);
           setActiveBrand(matchingBrand.id);
         }
       }
     }
-  }, [categoryParam, activeBrand]);
+  }, [categoryParam, activeBrand, searchParams, setSearchParams]);
 
   const currentBrandData = SITE_DATA.brands.find(b => b.id === activeBrand) || SITE_DATA.brands[0];
 
@@ -932,7 +941,7 @@ function CatalogView() {
             <button
               key={brand.id}
               onClick={() => {
-                setActiveBrand(brand.id);
+                searchParams.set("marca", brand.id);
                 // Clear category param to let them browse full brand catalog
                 searchParams.delete("categoria");
                 setSearchParams(searchParams);
