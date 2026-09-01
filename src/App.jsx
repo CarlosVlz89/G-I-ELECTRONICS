@@ -38,14 +38,14 @@ import {
 const BRAND_NAME = "G & I ELECTRONICS, LEDS Y BOCINAS";
 const LEGAL_NAME = "G & I ELECTRONICS, LEDS Y BOCINAS";
 const ADDRESS = "Av. Convento Santa Mónica, Edificio 79, Piso 2, Interior 30 1-B, Col. Jardines de Santa Mónica, C.P. 54050, Tlalnepantla de Baz, Estado de México, México.";
-const SUPPORT_EMAIL = "soporte@gielectronics.com.mx";
+const SUPPORT_EMAIL = "g.i.electronics.ledsybocinas26@gmail.com";
 
 const SITE_DATA = {
   brandName: BRAND_NAME,
   legalName: LEGAL_NAME,
-  phone: "+52 55 1234 5678",
-  phoneFormatted: "+52 (55) 1234-5678",
-  email: "ventas@gielectronics.com.mx",
+  phone: "(55) 90 65 01 95",
+  phoneFormatted: "(55) 90 65 01 95",
+  email: "g.i.electronics.ledsybocinas26@gmail.com",
   supportEmail: SUPPORT_EMAIL,
   address: ADDRESS,
   googleMapsUrl: "https://maps.google.com/?q=Av.+Convento+Santa+Mónica,+Edificio+79,+Interior+30+1-B,+Jardines+de+Santa+Mónica,+54050+Tlalnepantla+de+Baz",
@@ -1277,7 +1277,7 @@ function ContactView() {
                 <Phone className="w-4 h-4" />
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Teléfono</span>
-              <a href={`tel:${SITE_DATA.phone}`} className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all">
+              <a href={`tel:+525590650195`} className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all">
                 {SITE_DATA.phone}
               </a>
             </div>
@@ -1311,12 +1311,12 @@ function ContactView() {
               </div>
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Whatsapp</span>
               <a 
-                href={`https://wa.me/525574552441`} 
+                href={`https://wa.me/525590650195`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all"
               >
-                +525574552441
+                +52 55 9065 0195
               </a>
             </div>
           </div>
