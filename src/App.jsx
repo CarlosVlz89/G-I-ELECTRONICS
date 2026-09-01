@@ -1269,7 +1269,7 @@ function ContactView() {
         {/* Contact Info Cards */}
         <div>
           <h2 className="text-xl font-bold text-center text-[#f8fafc] mb-6 uppercase tracking-wider">Información de contacto</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-3 gap-6">
             
             {/* Teléfono */}
             <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
@@ -1302,22 +1302,6 @@ function ContactView() {
               <p className="text-xs font-bold text-[#cbd5e1] leading-normal">
                 {SITE_DATA.address}
               </p>
-            </div>
-
-            {/* Whatsapp */}
-            <div className="bg-[#0f172a] rounded-lg border border-white/5 p-6 text-center space-y-3 shadow-sm flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red shrink-0 text-xs font-bold">
-                W
-              </div>
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">Whatsapp</span>
-              <a 
-                href={`https://wa.me/525590650195`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-sm font-bold text-[#cbd5e1] hover:text-brand-red transition-all"
-              >
-                +52 55 9065 0195
-              </a>
             </div>
           </div>
         </div>
